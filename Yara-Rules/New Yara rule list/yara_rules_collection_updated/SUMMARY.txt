@@ -1,0 +1,211 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                    YARA RULES COLLECTION                         ║
+║                  HEX-BASED FILE DETECTION                        ║
+║                     DECEMBER 1, 2025                             ║
+╚══════════════════════════════════════════════════════════════════╝
+
+PACKAGE: yara_rules_collection_updated.zip (50 KB)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CONTENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📁 YARA Rules:           120 files (.yar)
+📁 Documentation:        4 files (.md, .txt)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Total:                   124 files
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+UPDATED RULES (33 FILES) - NOW WITH HEX DETECTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔷 WINDOWS EXECUTABLES (Architecture-Aware)
+   ✓ Detect_32_bit_exe_windows_file.yar
+   ✓ Detect_64_bit_exe_windows_file.yar
+   ✓ Detect_exe.yar (generic PE detection)
+   ✓ Detect_dll.yar
+   ✓ Detect_scr.yar (screensaver)
+   ✓ Detect_pif.yar
+
+🔷 ELF EXECUTABLES (Linux/Unix - Architecture-Aware)
+   ✓ Detect_elf.yar (contains 3 rules):
+     • Detect_elf_32_bit
+     • Detect_elf_64_bit
+     • Detect_elf_any
+
+🔷 DOCUMENT FORMATS
+   ✓ Detect_pdf.yar
+   ✓ Detect_doc.yar
+   ✓ Detect_docx.yar
+   ✓ Detect_xls.yar
+   ✓ Detect_xlsx.yar
+   ✓ Detect_ppt.yar
+   ✓ Detect_pptx.yar
+   ✓ Detect_rtf.yar
+   ✓ Detect_eml.yar
+   ✓ Detect_epub.yar
+   ✓ Detect_eps.yar
+
+🔷 ARCHIVE FORMATS
+   ✓ Detect_zip.yar
+   ✓ Detect_rar.yar
+   ✓ Detect_7z.yar
+   ✓ Detect_gz.yar
+   ✓ Detect_jar.yar
+
+🔷 VIRTUAL DISK IMAGES
+   ✓ Detect_iso.yar
+   ✓ Detect_vhd.yar
+   ✓ Detect_vmdk.yar
+   ✓ Detect_qemu.yar
+
+🔷 OTHER FORMATS
+   ✓ Detect_lnk.yar
+   ✓ Detect_swf.yar
+   ✓ Detect_plist.yar
+   ✓ Detect_evtx.yar
+   ✓ Detect_mdb.yar
+   ✓ Detect_cur.yar
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+UNCHANGED RULES (87 FILES)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+These rules detect code patterns, functions, and behaviors:
+• PHP functions (eval, exec, system, etc.)
+• Java methods (Runtime.exec, ProcessBuilder, etc.)
+• ASP/VBScript patterns
+• Node.js functions (child_process, fs, etc.)
+• Shell commands and execution patterns
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DOCUMENTATION FILES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📖 README.md
+   Complete overview of changes, technical details, and
+   file format specifications
+
+📖 EXAMPLES.md
+   Detailed usage examples, code samples, and tutorials
+   for all major file types
+
+📖 CHANGES.txt
+   Complete change log showing before/after comparisons
+   and technical improvements
+
+📖 QUICK_REFERENCE.md
+   Quick reference card with common commands and use cases
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+KEY IMPROVEMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ ACCURACY
+   • Magic byte detection validates actual file structure
+   • No more false positives from text files or URLs
+   • Works regardless of file extension
+
+✅ ARCHITECTURE DETECTION
+   • Distinguishes 32-bit vs 64-bit Windows PE files
+   • Distinguishes 32-bit vs 64-bit ELF files
+   • Uses actual PE/ELF headers and machine types
+
+✅ PERFORMANCE
+   • Hex pattern matching is faster than string search
+   • Direct offset checking (no full file scan)
+   • Reduced false positive rate
+
+✅ RELIABILITY
+   • Detects renamed files (e.g., .exe renamed to .txt)
+   • Finds embedded executables
+   • Industry-standard magic byte signatures
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+QUICK START
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Extract the zip file:
+   $ unzip yara_rules_collection_updated.zip
+
+2. Scan a file:
+   $ yara Detect_64_bit_exe_windows_file.yar suspicious.exe
+
+3. Scan a directory:
+   $ yara -r Detect_exe.yar /path/to/scan/
+
+4. Check architecture of unknown binary:
+   $ yara Detect_32_bit_exe_windows_file.yar mystery_file
+   $ yara Detect_64_bit_exe_windows_file.yar mystery_file
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+USE CASES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎯 Malware Analysis
+   • Identify architecture of suspicious binaries
+   • Detect executables disguised with wrong extensions
+   • Find embedded PE/ELF files
+
+🎯 File Classification
+   • Accurately classify files by actual type
+   • Verify file types for security scanning
+   • Audit file uploads
+
+🎯 Security Scanning
+   • Find all executables in a directory tree
+   • Detect hidden or obfuscated executables
+   • Validate file types in uploads
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TECHNICAL SPECIFICATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+WINDOWS PE FORMAT:
+• MZ Header:    4D 5A (offset 0)
+• PE Signature: 50 45 00 00 (variable offset, usually at 0x3C)
+• Machine Type at PE+4:
+  - 32-bit (x86):   4C 01 (0x014C)
+  - 64-bit (x64):   64 86 (0x8664)
+
+ELF FORMAT:
+• ELF Magic:    7F 45 4C 46 (offset 0)
+• Class at offset 4:
+  - 32-bit:     01 (ELFCLASS32)
+  - 64-bit:     02 (ELFCLASS64)
+
+OTHER FORMATS:
+• PDF:      25 50 44 46 (%PDF)
+• ZIP:      50 4B 03 04 (PK)
+• RAR:      52 61 72 21 (Rar!)
+• 7-Zip:    37 7A BC AF 27 1C
+• GZIP:     1F 8B
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COMPATIBILITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✓ YARA 4.x
+✓ YARA 3.x
+✓ Command-line YARA
+✓ YARA-Python
+✓ Most YARA-based security tools
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SUPPORT & FEEDBACK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+For questions or issues, refer to:
+• README.md for technical details
+• EXAMPLES.md for usage examples
+• QUICK_REFERENCE.md for common commands
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Created: December 1, 2025
+Modified for hex-based file detection
+Original collection: ChatGPT-generated
+
+╔══════════════════════════════════════════════════════════════════╗
+║              READY TO USE - EXTRACT AND SCAN!                    ║
+╚══════════════════════════════════════════════════════════════════╝
